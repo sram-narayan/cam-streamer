@@ -1,7 +1,7 @@
 FROM resin/raspberrypi3-python
 
 # Install nginx and ffmpeg
-RUN apt-get install --update nginx ffmpeg && rm -rf /var/cache/apk/* && mkdir /tmp/stream
+RUN apt-get install nginx ffmpeg && rm -rf /var/cache/apk/* && mkdir /tmp/stream
 COPY nginx/nginx.conf /etc/nginx/nginx.conf
 
 COPY ./startup.sh /
