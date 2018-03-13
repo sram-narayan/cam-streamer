@@ -1,10 +1,7 @@
-FROM resin/rpi-raspbian
+FROM resin/raspberrypi3-alpine
 
 # Install nginx and ffmpeg
-RUN apt-get update && apt-get install -y \
-   nginx \
-   libav-tools \
-   && rm -rf /var/cache/apk/* && mkdir /tmp/stream
+RUN apk add --update nginx ffmpeg && rm -rf /var/cache/apk/* && mkdir /tmp/stream
 COPY nginx/nginx.conf /etc/nginx/nginx.conf
 
 COPY ./startup.sh /
