@@ -1,4 +1,4 @@
-FROM resin/raspberrypi3-python
+FROM resin/rpi-raspbian
 
 # Install nginx and ffmpeg
 RUN apt-get update && apt-get install -y \
